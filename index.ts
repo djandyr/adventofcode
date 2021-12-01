@@ -1,6 +1,15 @@
-// Import stylesheets
-import './style.css';
+function bootstrap() {
+  // Setup
+  (window as any).expect = chai.expect;
+  (window as any).should = chai.should();
+  mocha.setup("bdd");
+  mocha.checkLeaks();
 
-// Write TypeScript code!
-const appDiv: HTMLElement = document.getElementById('app');
-appDiv.innerHTML = `<h1>TypeScript Starter</h1>`;
+  // Load tests
+  require("./adventofcode");
+
+  // Run tests
+  mocha.run();
+}
+
+window.bootstrap = bootstrap;
