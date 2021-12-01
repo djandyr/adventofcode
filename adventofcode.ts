@@ -9,7 +9,7 @@ describe('adventofcode', function () {
     expect(day1(example)).to.equal(7);
 
     let report  = fs
-    .readFileSync(path.join(__dirname, 'day1-input.txt'), 'utf8')
+    .readFileSync('./src/day1-input.txt', 'utf8')
     .toString()
     .trim()
     .split('\n')
