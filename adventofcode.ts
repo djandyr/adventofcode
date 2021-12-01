@@ -1,5 +1,4 @@
 import {day1} from './src/day1';
-import day1input from "./input/day1.txt";
 
 const fs = require('fs');
 const path = require('path');
