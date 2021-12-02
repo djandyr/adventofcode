@@ -1,5 +1,5 @@
 {
-  "name": "adventofcode2021",
+  "name": "adventofcode",
   "version": "0.0.0",
   "private": true,
   "types": "./index.d.ts",
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/djandyr/adventofcode2021.git"
+    "url": "git+https://github.com/djandyr/adventofcode.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/djandyr/adventofcode2021/issues"
+    "url": "https://github.com/djandyr/adventofcode/issues"
   },
-  "homepage": "https://github.com/djandyr/adventofcode2021#readme",
+  "homepage": "https://github.com/djandyr/adventofcode#readme",
   "devDependencies": {
     "@types/chai": "^4.2.22",
     "@types/mocha": "^9.0.0",
