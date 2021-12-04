@@ -33,42 +33,28 @@ export const powerConsumptionCalculator = (diagnosticReport) => {
     return gammaInt * epsilonInt;
 }
 
-export const lifeSupportCalculator = (diagnosticReport) => {
+export const lifeSupportCalculator = (diagnosticReport:any) => {
 
-    const calculateOxygenRating = (list, index = 0) => {
-        let mostCommonBit = "1";
+    // Calculate rating for oxygen (o2) and carbon dioxide (co2)
+    const calculateRating = (list:any, type: "o2" | "co2", index:number = 0) => {
+        let commonBit = type === "o2" ? "1" : "0";
         let bitCount = countBits(list);
 
+        // If bit count (at index) of "zeros" is greater than "ones"
         if(bitCount[index][0] > bitCount[index][1]) {
-            mostCommonBit = "0"
+            commonBit = type === "o2" ? "0" : "1"
         }
 
-        const filteredList = list.filter((binary) => binary[index] === mostCommonBit);
+        const filteredList = list.filter((binary) => binary[index] === commonBit);
         if (filteredList.length === 1) {
             return filteredList[0];
         }
-
-        return calculateOxygenRating(filteredList, index + 1);
+ 
+        return calculateRating(filteredList, type, index + 1);
     }
 
-    const calculateCo2Rating = (list, index = 0) => {
-        let bitCount = countBits(list);
-        let leastCommonBit = "0";
-
-        if(bitCount[index][0] > bitCount[index][1]) {
-            leastCommonBit = "1"
-        }
-
-        const filteredList = list.filter((binary) => binary[index] === leastCommonBit);
-        if (filteredList.length === 1) {
-            return filteredList[0];
-        }
-
-        return calculateCo2Rating(filteredList, index + 1);
-    }
-
-    const oxygenRating = calculateOxygenRating(diagnosticReport)
-    const co2Rating = calculateCo2Rating(diagnosticReport)
+    const oxygenRating = calculateRating(diagnosticReport, 'o2')
+    const co2Rating = calculateRating(diagnosticReport, 'co2')
 
     return parseInt(oxygenRating, 2) * parseInt(co2Rating, 2);
 }
