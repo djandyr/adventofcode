@@ -16,22 +16,19 @@ const input = fs
     .split("\n");
 
 describe('adventofcode', function () {
-    // Part 1
-    it('day3-example', function () {
-        const powerConsumption = powerConsumptionCalculator(example); 
-        expect(powerConsumption).to.equal(198); 
-    });  
-    it('day3-input', function () {
-        const powerConsumption = powerConsumptionCalculator(input); 
-        expect(powerConsumption).to.equal(2583164);
-    });
-    // Part 2
-    it('day3-part-2-example', function () {
-        const lifeSupportRating = lifeSupportCalculator(example); 
-        expect(lifeSupportRating).to.equal(230); 
-    });  
-    it('day3-part-2input', function () {
-        const powerConsumption = lifeSupportCalculator(input); 
-        expect(powerConsumption).to.equal(2784375);
+    it('day3', function () {
+        // Part 1
+        const powerConsumption1 = powerConsumptionCalculator(example); 
+        expect(powerConsumption1).to.equal(198); 
+
+        const powerConsumption2 = powerConsumptionCalculator(input); 
+        expect(powerConsumption2).to.equal(2583164);
+
+        // Part 2
+        const lifeSupportRating1 = lifeSupportCalculator(example); 
+        expect(lifeSupportRating1).to.equal(230); 
+
+        const lifeSupportRating2 = lifeSupportCalculator(input); 
+        expect(lifeSupportRating2).to.equal(2784375);
     });
 });
