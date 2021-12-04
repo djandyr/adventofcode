@@ -1,7 +1,7 @@
+// https://adventofcode.com/2021/day/1
+
 import {filterDepthIncrease, filterDepthIncreaseByThreeSlidingWindowSum} from '../src/day1';
 import { expect } from 'chai';
-
-// https://adventofcode.com/2021/day/1
 
 describe('adventofcode', function () {
   it('day1', function () {
