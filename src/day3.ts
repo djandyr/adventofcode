@@ -1,5 +1,5 @@
 // --- Day 3: Binary Diagnostic ---
-export const countBits = (diagnosticReport) => {
+export const countBits = (diagnosticReport:any) => {
     const bitCount = [];
     for (const data of diagnosticReport) {
         data.split('').forEach((bit, index) => {
@@ -15,7 +15,7 @@ export const countBits = (diagnosticReport) => {
     return bitCount;
 }
 
-export const powerConsumptionCalculator = (diagnosticReport) => {
+export const powerConsumptionCalculator = (diagnosticReport:any) => {
     let gamma = '';
     let epsilon = '';
     let gammaInt = 0;
