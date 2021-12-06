@@ -21,8 +21,8 @@ export class BingoBoard {
     markSquare(square) {
       if (square in this.board) {
         this.board[square].hasMark = true;
-        ++this.rows[this.board[square].row];
-        ++this.cols[this.board[square].col];
+        ++this.rows[this.board[square].row]; // Count horizional marks (match size ie: 5 = winner)
+        ++this.cols[this.board[square].col]; // Count vericals marks
       }
     }
 
@@ -35,13 +35,15 @@ export class BingoBoard {
     }
   
     isWinner() {
-      return this.rows.some(row => row === this.size) || this.cols.some(col => col === this.size);
+      return this.rows.some((row) => row  === this.size) || this.cols.some((col) => col === this.size);
     }
 }
 
+// Create 5x5 BingoBoard from input
 export const createBoards = (input, size) => {
     const boards = [];
     for (let i = 0; i < input.length; i += size) {
+      // Slice 5 rows, and map only numbers (ignore commas)
       const boardData = input.slice(i, i + size).map(row => row.match(/\d+/g));
       boards.push(new BingoBoard(boardData));
     }
