@@ -1,3 +1,10 @@
+/**
+ * Only consider horizontal and vertical lines: lines where either x1 = x2 or y1 = y2.
+ * At how many points do at least two lines overlap?
+ * 
+ * @param input
+ * @returns 
+ */
 export const countPointsTwoLinesOverlap = (input) => {
     const coordinates: Map<string, number> = new Map();
 
@@ -35,6 +42,13 @@ export const countPointsTwoLinesOverlap = (input) => {
     return count;
 }
 
+/**
+ * Consider all of the lines including vertical, horizontal and diagonal. 
+ * At how many points do at least two lines overlap?
+ * 
+ * @param input 
+ * @returns 
+ */
 export const countPointsTwoLinesOverlapDiagonal = (input) => {
     const coordinates: Map<string, number> = new Map();
 
