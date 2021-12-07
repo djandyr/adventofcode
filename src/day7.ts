@@ -3,7 +3,7 @@
  * How much fuel must they spend to align to that position?
  * 
  * @param input 
- * @param positionOnly Return position with lowest fuel consumption
+ * @param part2
  * @returns 
  */
 export const calculateMinFuel = (input: [], part2 = false) => {
