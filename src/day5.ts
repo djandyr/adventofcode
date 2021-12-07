@@ -32,13 +32,6 @@ export const countPointsTwoLinesOverlap = (input) => {
         }
     }
 
-    let count = 0;
-    for (const value of coordinates.values()) {
-        if (value > 1) {
-            count++;
-        }
-    }
-
     return overlapCounter(coordinates);
 }
 
