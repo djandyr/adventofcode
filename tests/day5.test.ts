@@ -1,6 +1,6 @@
 // https://adventofcode.com/2021/day/5
 
-import {countPointsTwoLinesOverlap, countPointsTwoLinesOverlapDiagonal} from '../src/day5';
+import {plotHorizonalVerticalLines, plotLines, overlapCounter} from '../src/day5';
 import { expect } from 'chai';
 const fs = require('fs');
 
@@ -20,11 +20,11 @@ describe('adventofcode', function () {
     const example = generateInput('./tests/fixtures/day5-input-example.txt');
 
     // Part 1
-    expect(countPointsTwoLinesOverlap(example)).to.equal(5);
-    expect(countPointsTwoLinesOverlap(input)).to.equal(6397);
+    expect(overlapCounter(plotHorizonalVerticalLines(example))).to.equal(5);
+    expect(overlapCounter(plotHorizonalVerticalLines(input))).to.equal(6397);
 
     // Part 2
-    expect(countPointsTwoLinesOverlapDiagonal(example)).to.equal(12);
-    expect(countPointsTwoLinesOverlapDiagonal(input)).to.equal(22335);
+    expect(overlapCounter(plotLines(example))).to.equal(12);
+    expect(overlapCounter(plotLines(input))).to.equal(22335);
   });
 });

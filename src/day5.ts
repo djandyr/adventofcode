@@ -5,7 +5,7 @@
  * @param input
  * @returns 
  */
-export const countPointsTwoLinesOverlap = (input) => {
+export const plotHorizonalVerticalLines = (input) => {
     const coordinates: Map<string, number> = new Map();
 
     for (const [coord1, coord2] of input) {
@@ -32,7 +32,7 @@ export const countPointsTwoLinesOverlap = (input) => {
         }
     }
 
-    return overlapCounter(coordinates);
+    return coordinates;
 }
 
 /**
@@ -43,7 +43,7 @@ export const countPointsTwoLinesOverlap = (input) => {
  * @param input 
  * @returns 
  */
-export const countPointsTwoLinesOverlapDiagonal = (input) => {
+export const plotLines = (input) => {
     const coordinates: Map<string, number> = new Map();
 
     for (const [coord1, coord2] of input) {
@@ -68,7 +68,7 @@ export const countPointsTwoLinesOverlapDiagonal = (input) => {
         } while (x !== x2 || y !== y2);
     }
   
-    return overlapCounter(coordinates);
+    return coordinates;
 }
 
 /**
