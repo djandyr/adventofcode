@@ -1,6 +1,5 @@
 /**
  * Only consider horizontal and vertical lines: lines where either x1 = x2 or y1 = y2.
- * At how many points do at least two lines overlap?
  * 
  * @param input
  * @returns 
@@ -36,9 +35,7 @@ export const plotHorizonalVerticalLines = (input) => {
 }
 
 /**
- * 
  * Consider all of the lines including vertical, horizontal, diagonal. 
- * At how many points do at least two lines overlap?
  * 
  * @param input 
  * @returns 
@@ -72,7 +69,9 @@ export const plotLines = (input) => {
 }
 
 /**
- * Count points greater than 1
+ * At how many points do at least two lines overlap?
+ * Count overlap with points count greater than 1
+ * 
  * @param coordinates 
  * @returns 
  */
