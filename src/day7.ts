@@ -13,7 +13,7 @@ export const calculateMinFuel = (input: [], part2 = false) => {
     let minFuel = Math.pow(10, 1000) // Initialize with high number
 
     for(let pos = minPos; pos < maxPos; pos++) {
-        // Total fuel, or disatance
+        // Total fuel
         let totalFuel = 0;
         for(const crab of input) {
             
