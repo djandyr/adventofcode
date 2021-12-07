@@ -39,11 +39,12 @@ export const countPointsTwoLinesOverlap = (input) => {
         }
     }
 
-    return count;
+    return overlapCounter(coordinates);
 }
 
 /**
- * Consider all of the lines including vertical, horizontal and diagonal. 
+ * 
+ * Consider all of the lines including vertical, horizontal, diagonal. 
  * At how many points do at least two lines overlap?
  * 
  * @param input 
@@ -73,13 +74,21 @@ export const countPointsTwoLinesOverlapDiagonal = (input) => {
             coordinates.set(point, count + 1);
         } while (x !== x2 || y !== y2);
     }
+  
+    return overlapCounter(coordinates);
+}
 
+/**
+ * Count points greater than 1
+ * @param coordinates 
+ * @returns 
+ */
+ export const overlapCounter = (coordinates: Map<string, number>, offset:number = 1) => {
     let count = 0;
     for (const value of coordinates.values()) {
-      if (value > 1) {
+      if (value > offset) {
         count++;
       }
     }
-  
     return count;
 }
