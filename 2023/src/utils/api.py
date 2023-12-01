@@ -30,8 +30,7 @@ def get_input(day):
             raise RuntimeError(
                 f"Request failed\n\tstatus code: {response.status_code}\n\tmessage: {response.content}"
             )
-        with open(path, "w") as f:
+        with open(path, "w", encoding="utf-8") as f:
             f.write(response.text[:-1])
 
-    with open(path, "r") as f:
-        return f.read()
+    return open(path, "r", encoding="utf-8")

@@ -1,8 +1,7 @@
 from utils.api import get_input
-from io import StringIO
 import pandas as pd
 
-series = pd.Series(StringIO(get_input(1)))
+series = pd.Series(get_input(1))
 def extract_calibration_value(s):
     digits = ''.join(filter(str.isdigit, s))
     return int(digits[0] + digits[-1]) if digits else 0
