@@ -1,7 +1,7 @@
 from utils.api import get_input
 import re
 
-part_numbers, line_map, part, gear_ratio = [], {}, set(), 0
+part_numbers, line_map, parts, gear_ratio = [], {}, set(), 0
 lines = [line.strip() for line in get_input(3)]
 
 for i, line in enumerate(lines):
@@ -13,16 +13,16 @@ for i, line in enumerate(lines):
 
 for i, line in enumerate(lines):
     for item in re.finditer(r'[^\.\d]', line):
-        gear = set()
+        gears = set()
         for l in range(i-1, i+2):
             for c in range(item.start()-1, item.start()+2):
                 if (l, c) in line_map:
-                    part.add(line_map[l, c])
-                    gear.add(line_map[l, c])
-        if len(gear) == 2:
-            gear_ratio += part_numbers[gear.pop()] * part_numbers[gear.pop()]
+                    parts.add(line_map[l, c])
+                    gears.add(line_map[l, c])
+        if len(gears) == 2:
+            gear_ratio += part_numbers[gears.pop()] * part_numbers[gears.pop()]
 
 # Part 1
-print("Sum of all part numbers:", sum(part_numbers[i] for i in part))
+print("Sum of all part numbers:", sum(part_numbers[i] for i in parts))
 # Part 2
 print("Sum of all gear ratios:", gear_ratio)
