@@ -5,9 +5,9 @@ lines = get_input(4).read().splitlines()
 card_score, winning_nums, points = 0, 0, 0
 card_counts = [1] * len(lines)
 
-for i, row in enumerate(lines):
-    wins = row.split("|")[0].split(":")[1].split()
-    nums = row.split("|")[1].split()
+for i, line in enumerate(lines):
+    wins = line.split("|")[0].split(":")[1].split()
+    nums = line.split("|")[1].split()
     for num in nums:
         if num in wins:
             winning_nums += 1
