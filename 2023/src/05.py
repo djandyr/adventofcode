@@ -1,5 +1,4 @@
 from utils.api import get_input
-import re
 
 def process_mapping(seeds, ranges):
     mapping = []
